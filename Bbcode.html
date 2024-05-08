@@ -1,0 +1,44 @@
+<!doctype>
+<html>
+  <head>
+    <title>bbcode预览工具</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/bbcodejs/bbcode.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+  </head>
+  <body style="padding: 5%;background-color: #9A9;">
+    <nav class="demo imponent">
+      <a href="#" class="brand">
+        <h2><xmp></> Bbcode Writer</xmp></h2>
+      </a>
+    </nav>
+    <script>function conv( text, out ){
+      out.innerHTML = new bbcode.Parser().toHTML( text );;
+    }</script>
+    <br>
+    <br>
+    <div class="flex two">
+      <div>
+        <article class="card" style="box-shadow: 0px 5px 1em #AAA;">
+          <header>
+            <h1>InPut BBCODE</h1>
+          </header>
+          <footer>
+            <div contenteditable id="inp" style="border: 1px solid #AAA; padding: 2%; border-radius: 5px;"></div>
+            <button onclick="conv( inp.innerText, outp )">预览</button>
+        </footer>
+      </article>
+    </div>
+    <div>
+      <article class="card" style="box-shadow: 0px 5px 1em #AAA;">
+        <header>
+          <h1>OutPut BBCODE</h1>
+        </header>
+          <footer>
+            <div id="outp">try input some text</div>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
