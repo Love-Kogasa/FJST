@@ -1,4 +1,4 @@
-name: Deploy to FreeDayO/FJST
+name: Update FreeDayO/FJST
 
 on:
   push:
@@ -9,18 +9,10 @@ jobs:
   deploy:
       runs-on: ubuntu-latest
       steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # If your repository depends on submodule, please see: https://github.com/actions/checkout
-          submodules: recursive
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.ACESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           external_repository: FreeDayO/FJST
           publish_branch: main
-          publish_dir: ./
-          force_orphan: true
+          publish_dir: .
