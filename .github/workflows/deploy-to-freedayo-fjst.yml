@@ -12,7 +12,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
           external_repository: FreeDayO/FJST
           publish_branch: main
           publish_dir: .
